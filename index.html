@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WD101 Capstone</title>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main class="roboto-regular">
+            <!-- form section -->
+            <section>
+                <h2>Registration Form</h2>
+                <form name="myForm" id="myForm" onsubmit="return handleFormSubmit(event)">
+                    <div class="form-field text-box">
+                        <label for="name">Name <span class="required-field">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" min=2 max = 100 required />
+                    </div>
+                    <div class="form-field text-box">
+                        <label for="email">Email <span class="required-field">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="form-field text-box">
+                        <label for="Password">Password <span class="required-field">*</span></label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required />
+                    </div>
+                    <div class="form-field date-field">
+                        <label for="dob">DOB <span class="required-field">*</span></label>
+                        <input type="date" name="dob" id="dob" min="1969-12-31" max="2005-12-31" required />
+                    </div>
+                    <div>
+                        <input type="checkbox" name="terms" id="terms" value="accepted" required /> <label for="terms">Accept terms and conditions <span class="required-field">*</span></label>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <!-- entries section -->
+            <section class="user-entries-section">
+                <div>
+                    <h2>User Entries</h2>
+                    <table>
+                        <thead>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>DOB</th>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- populate table using javascript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <script src="./index.js"></script>
+    </body>
+</html>
