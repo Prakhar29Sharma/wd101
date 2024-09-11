@@ -4,6 +4,8 @@ let password = document.getElementById("password");
 
 let userEntries = JSON.parse(localStorage.getItem("userEntries"));
 
+if (userEntries === undefined || userEntries === null) userEntries = [];
+
 fname.addEventListener("input", () => validateName(fname));
 
 email.addEventListener("input", () => validateEmail(email));
@@ -80,13 +82,16 @@ function handleFormSubmit(event) {
 }
 
 function populateUserEntriesTable() {
+
+    // get the user entries from the local storage
     let userEntries = JSON.parse(localStorage.getItem("userEntries"));
+    // check if it's empty, null or undefined
+    if (userEntries === undefined || userEntries === null || userEntries.length === 0) return;
+    // main logic
     let tableBody = document.getElementById("table-body");
+
     userEntries = userEntries.map((userData) => {
         const user = userData;
-        console.log(user);
-        console.log(user.name);
-        console.log(typeof(user.name));
         const tableRow = `
         <tr>
             <td>${user.name}</td>
@@ -97,6 +102,7 @@ function populateUserEntriesTable() {
         `;
         return tableRow;
     });
+
     tableBody.innerHTML = userEntries.join("\n");
 }
 
