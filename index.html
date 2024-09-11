@@ -28,7 +28,7 @@
                         <input type="date" name="dob" id="dob" min="1969-12-31" max="2005-12-31" required />
                     </div>
                     <div>
-                        <input type="checkbox" name="terms" id="terms" value="accepted" required /> <label for="terms">Accept terms and conditions <span class="required-field">*</span></label>
+                        <input type="checkbox" name="terms" id="terms" value="true" required /> <label for="terms">Accept terms and conditions <span class="required-field">*</span></label>
                     </div>
                     <button type="submit">Submit</button>
                 </form>
@@ -43,6 +43,7 @@
                             <th>Email</th>
                             <th>Password</th>
                             <th>DOB</th>
+                            <th>Accepted terms?</th>
                         </thead>
                         <tbody id="table-body">
                             <!-- populate table using javascript -->

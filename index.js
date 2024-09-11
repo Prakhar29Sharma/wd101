@@ -77,8 +77,6 @@ function handleFormSubmit(event) {
 
         localStorage.setItem("userEntries", JSON.stringify(userEntries));
 
-        document.getElementById("myForm").reset();
-
         populateUserEntriesTable();
     }
 }
@@ -100,6 +98,7 @@ function populateUserEntriesTable() {
             <td>${user.email}</td>
             <td>${user.password}</td>
             <td>${user.dob}</td>
+            <td>${user.terms}</td>
         </tr>
         `;
         return tableRow;
