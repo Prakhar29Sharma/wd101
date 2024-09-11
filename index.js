@@ -86,7 +86,7 @@ function populateUserEntriesTable() {
     // get the user entries from the local storage
     let userEntries = JSON.parse(localStorage.getItem("userEntries"));
     // check if it's empty, null or undefined
-    if (userEntries === undefined || userEntries === null || userEntries.length === 0) return;
+    if (userEntries === undefined || userEntries === null || userEntries.length === 0) userEntries = [];
     // main logic
     let tableBody = document.getElementById("table-body");
 
